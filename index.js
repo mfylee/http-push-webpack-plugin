@@ -10,10 +10,10 @@ var request = require('request');
 var log = require('log-util');
 var chalk = require('chalk');
 
-function upload(url, data, content, subpath, callback) {
+function upload(url, data, filepath, subpath, callback) {
     var formData = u.extend(data, {
         file: {
-            value: content,
+            value: fs.createReadStream(filepath),
             options: {
                 filename: subpath
             }
@@ -58,12 +58,12 @@ HttpPushWebpackPlugin.prototype.upload = function (compilation, cb) {
     var assets = compilation.assets;
     var opt = this.options;
     u.each(assets, function (item, filename) {
-        var content = fs.readFileSync(item.existsAt, 'utf8');
+        // var content = fs.readFileSync(item.existsAt, 'utf8');
         var subpath = path.basename(filename);
         upload(opt.receiver, {
             token: opt.token,
             to: opt.to + '/' + filename
-        }, content, subpath, function (err, res) {
+        }, item.existsAt, subpath, function (err, res) {
             if (err) {
                 log.error(filename + ' - ' + chalk.red('[error] [' + err + ']'));
             }

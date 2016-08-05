@@ -1,6 +1,6 @@
 {
   "name": "http-push-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "webpack plugin for upload files to server with http",
   "main": "index.js",
   "scripts": {
