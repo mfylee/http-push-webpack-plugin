@@ -1,0 +1,19 @@
+{
+  "name": "http-push-webpack-plugin",
+  "version": "1.0.0",
+  "description": "webpack plugin for upload files to server with http",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "http"
+  ],
+  "author": "mfylee@163.com",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.74.0",
+    "log-util": "^1.1.2"
+  }
+}
