@@ -6,7 +6,7 @@ npm install http-push-webpack-plugin --save-dev
 
 ### 配置
 ```
-var HttpPushWebpackPlugin = require('./tools/http-push-webpack-plugin');
+var HttpPushWebpackPlugin = require('http-push-webpack-plugin');
 
 new HttpPushWebpackPlugin({
     receiver: 'http://host:port/receiver', // 服务端文件上传接口
@@ -14,3 +14,6 @@ new HttpPushWebpackPlugin({
     to: '/home/work/xxx' // 上传文件目录
 })
 ```
+
+### 服务端部署
+> TODO: 后续补充
